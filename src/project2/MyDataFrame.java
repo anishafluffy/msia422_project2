@@ -17,8 +17,23 @@ public class MyDataFrame {
         this.year = year;
         this.name = name;
         this.count = count;
-	}
+	} 
 	
+	//1. head & tail
+	public MyDataFrame head(int n) {
+		for (int i = 0; i < n; i++)  
+	      {  
+	         System.out.println(
+	        		 this.state.get(i).toString() + ", " + 
+	        		 this.gender.get(i).toString() + ", " + 
+	        		 this.year.get(i).toString() + ", " + 
+	        		 this.name.get(i).toString() + ", " + 
+	        		 this.count.get(i).toString()
+	        		 );  
+	      }
+		return null;
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

@@ -5,6 +5,7 @@ import java.util.*;
 
 public class MyPandas {
 
+	//1. read
 	public static MyDataFrame readCSV(String path) throws IOException {
 		//take in path
 		File file = new File(path);
@@ -25,13 +26,18 @@ public class MyPandas {
 				count.add(Integer.parseInt(line.split(",")[4]));
 			}
 		}
-		for (String n : name) {
-			System.out.println(n);
-		}
+//		for (String n : name) {
+//			System.out.println(n);
+//		}
 		MyDataFrame df = new MyDataFrame(state, gender, year, name, count); 
 		return df;
-		
 	}
+	
+	//2. write
+	
+	//3. concat
+	
+	//main
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		//readCSV("./CA.txt");
