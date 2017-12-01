@@ -34,8 +34,15 @@ public class MyPandas {
 	}
 	
 	//2. write
+	public static void writeCSV(MyDataFrame data, String path) throws IOException {
+		
+	}
 	
 	//3. concat
+	public static MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
+		MyDataFrame df = null;
+		return df;
+	}
 	
 	//main
 	public static void main(String[] args) throws IOException {

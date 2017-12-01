@@ -20,6 +20,7 @@ public class MyDataFrame {
 	} 
 	
 	//1. head & tail
+	//head: Returns the first n rows of the data
 	public MyDataFrame head(int n) {
 		for (int i = 0; i < n; i++)  
 	      {  
@@ -32,8 +33,112 @@ public class MyDataFrame {
 	        		 );  
 	      }
 		return null;
-		
 	}
+	//tail: Returns the last n rows of the data
+	public MyDataFrame tail(int n) {
+		return null;
+	}
+	
+	//2. data type
+	//index: Returns the type of the column specified by index
+		//If the type is not uniform, return ‘String’
+	public String dType(int index) {
+		return null;
+	}
+	//Returns the type of the column specified by name
+		//If the type is not uniform, return ‘String’
+	public String dType(String name) {
+		return null;
+	}
+	
+	//3. slicing
+	//Returns the column specified by index
+	public MyDataFrame slice(int index) {
+		return null;
+	}
+	
+	//Returns the column specified by name
+	public MyDataFrame slice(String name) {
+		return null;
+	}
+	
+	//Returns the columns specified by an index array
+	public MyDataFrame slice(int[] indexArr) {
+		return null;
+	}
+	
+	//Returns the columns specified by a name array
+	public MyDataFrame slice(String[] nameArr) {
+		return null;
+	}
+	
+	//4. filtering
+	//Returns data filtered by applying “col op o” on MyDataFrame object, 
+		//e.g. “count > 10”, “state = ‘IL’”
+	public MyDataFrame filter(String col, String op, Object o) {
+		return null;
+	}
+	
+	//5. indexing
+	//Returns the rows starting from index
+	public MyDataFrame loc(int index) {
+		return null;
+	}
+
+	//Returns the rows starting from label
+	public MyDataFrame loc(String label) {
+		return null;
+	}
+
+	//Returns the rows between from and to (including from and to)
+	public MyDataFrame loc(int from, int to) {
+		return null;
+	}
+	
+	//Returns the rows between from and to (including from and to)
+	public MyDataFrame loc(String from, String to) {
+		return null;
+	}
+	
+	//6. sorting
+	//Returns the data sorted by the column specified by index
+	public MyDataFrame sort(int index) {
+		return null;
+	}
+
+	//Returns the data sorted by the column specified by name
+	public MyDataFrame sort(String name) {
+		return null;
+	}
+	
+	//7. aggregation
+	//Returns the minimum element of the column specified by index
+	public Object getMin(int index) {
+		return null;
+	}
+	
+	//Returns the minimum element of the column specified by label
+	public Object getMin(String label) {
+		return null;
+	}
+	
+	//Returns the maximum element of the column specified by index
+	public Object getMax(int index) {
+		return null;
+	}
+	
+	//Returns the maximum element of the column specified by label
+	public Object getMax(String label) {
+		return null;
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
