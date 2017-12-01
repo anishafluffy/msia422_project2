@@ -22,7 +22,7 @@ public class MyTest {
 		//df.slice(3); //gives an error when enter incorrect
 		//df.slice(5); //gives an error when enter incorrect
 		
-		int[] indexArr = {1,2};
+		int[] indexArr = {1,3};
 		df.slice(indexArr);
 
 		//df.slice("name"); //gives an error when enter incorrect

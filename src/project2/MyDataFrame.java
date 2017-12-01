@@ -239,11 +239,11 @@ public class MyDataFrame {
 				//get specified column
 				ArrayList col = df.getCol(indexArr[x]); 
 				System.out.print(col.get(y).toString()); 
-				if (x < indexArr.length) {
+				if (x < indexArr.length - 1) {
 					System.out.print(", ");
 				}
-				System.out.print("\n");
 			}
+			System.out.print("\n");
 		}
 		return null;
 	}
