@@ -21,7 +21,7 @@ public class MyDataFrame {
         this.name = name;
         this.count = count;
 	}
-	
+	// get i row of dataframe
 	public String get(int i) {
         return
        		 this.state.get(i).toString() + ", " + 
@@ -31,9 +31,29 @@ public class MyDataFrame {
        		 this.count.get(i).toString()
        		 ;  
 	}
-	
+	// get length of dataframe
 	public int getLength() {
 		return this.index.size();
+	}
+	
+	public ArrayList getCol(int i) {
+		if (i == 0) {
+			return this.index;
+		} else if (i == 1) {
+			return this.state;
+		} else if (i == 2) {
+			return this.gender;
+		} else if (i == 3) {
+			return this.year;
+		} else if (i == 4) {
+			return this.name;
+		} else { 
+			//(i == 5) 
+			return this.count;
+		} 
+//		else {
+//			throw new IllegalArgumentException();
+//		}
 	}
 	
 	//1. head & tail
@@ -73,6 +93,7 @@ public class MyDataFrame {
 	//3. slicing
 	//Returns the column specified by index
 	public MyDataFrame slice(int index) {
+		MyDataFrame.getCol(0); 
 		return null;
 	}
 	
