@@ -256,6 +256,7 @@ public class MyDataFrame {
 	//Returns the rows starting from index
 	public MyDataFrame loc(int index1) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		System.out.println("Index, " + "State, " + "Gender, " + "Year, " + "Name, " + "Count");
 		int len = df.getLength();
 		for (int i = index1; i < len; i++) {
 			System.out.println(df.get(i));
@@ -266,6 +267,7 @@ public class MyDataFrame {
 	//Returns the rows between from and to (including from and to)
 	public MyDataFrame loc(int from, int to) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		System.out.println("Index, " + "State, " + "Gender, " + "Year, " + "Name, " + "Count");
 		int len = df.getLength();
 		for (int i = from; i <= to; i++) {
 			System.out.println(df.get(i));
