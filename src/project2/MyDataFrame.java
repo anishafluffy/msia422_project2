@@ -272,7 +272,8 @@ public class MyDataFrame {
 	//Returns the minimum element of the column specified by index
 	public Object getMin(int index1) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
-		return Collections.min(df.slice(index1));
+		System.out.print(Collections.min(df.getCol(index1)));
+		return null;
 	}
 	
 	//Returns the minimum element of the column specified by label
@@ -284,7 +285,8 @@ public class MyDataFrame {
 	//Returns the maximum element of the column specified by index
 	public Object getMax(int index1) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
-		return Collections.max(df.slice(index1));
+		System.out.print(Collections.max(df.getCol(index1)));
+		return null;
 	}
 	
 	//Returns the maximum element of the column specified by label
