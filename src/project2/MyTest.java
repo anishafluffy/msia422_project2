@@ -14,9 +14,16 @@ public class MyTest {
 		//MyPandas.writeCSV(df, "./Combined.txt");
 		
 		//df.head(5);
-		df.dType(2);
-		df.dType("STATE");
+		df.tail(5);
+		//df.dType(2);
+		//df.dType("STATE");
+		
 		df.slice(3); //gives an error when enter 5
+
+
+
+
+
 	}
 
 }

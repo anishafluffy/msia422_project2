@@ -79,6 +79,19 @@ public class MyDataFrame {
 	}
 	//tail: Returns the last n rows of the data
 	public MyDataFrame tail(int n) {
+		int len = this.index.size();
+		System.out.println("Index, " + "State, " + "Gender, " + "Year, " + "Name, " + "Count");
+		for (int i = n; i > 0 ; i--)  
+	      {  
+	         System.out.println(
+	        		 this.index.get(len - i).toString() + ", " + 
+	        		 this.state.get(len - i).toString() + ", " + 
+	        		 this.gender.get(len - i).toString() + ", " + 
+	        		 this.year.get(len - i).toString() + ", " + 
+	        		 this.name.get(len - i).toString() + ", " + 
+	        		 this.count.get(len - i).toString()
+	        		 );  
+	      }
 		return null;
 	}
 	
