@@ -10,7 +10,7 @@ public class MyTest {
 		MyPandas.writeCSV(df, "./Output.txt");
 		
 		df.head(5);
-		
+		//df.getCol(0);
 		
 	}
 

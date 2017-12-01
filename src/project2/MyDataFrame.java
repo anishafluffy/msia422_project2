@@ -2,6 +2,7 @@ package project2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MyDataFrame {
 
@@ -21,7 +22,28 @@ public class MyDataFrame {
         this.name = name;
         this.count = count;
 	}
-	
+
+	//getters
+    public ArrayList getIndex() { 
+        return this.index; 
+    } 
+    public ArrayList getState() { 
+        return this.state; 
+    } 
+    public ArrayList getGender() { 
+        return this.gender; 
+    } 
+    public ArrayList getYear() { 
+        return this.year; 
+    } 
+    public ArrayList getName() { 
+        return this.name; 
+    } 
+    public ArrayList getCount() { 
+        return this.count; 
+    } 
+    
+	// get i row of dataframe
 	public String get(int i) {
         return
        		 this.state.get(i).toString() + ", " + 
@@ -32,10 +54,11 @@ public class MyDataFrame {
        		 ;  
 	}
 	
+	// get length of dataframe
 	public int getLength() {
 		return this.index.size();
 	}
-	
+
 	//1. head & tail
 	//head: Returns the first n rows of the data
 	public MyDataFrame head(int n) {
@@ -73,6 +96,7 @@ public class MyDataFrame {
 	//3. slicing
 	//Returns the column specified by index
 	public MyDataFrame slice(int index) {
+		//MyDataFrame.getCol(0); 
 		return null;
 	}
 	
