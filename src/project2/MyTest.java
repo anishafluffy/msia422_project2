@@ -27,8 +27,8 @@ public class MyTest {
 		df.getMin(3);
 		df.getMax("count");
 		df.getMin("count");
-
-
+		df.loc(700000);
+		df.loc(5,10);
 	}
 
 }
