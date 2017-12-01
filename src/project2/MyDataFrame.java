@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class MyDataFrame {
 
+	private ArrayList<Integer> index;
 	private ArrayList<String> state;
 	private ArrayList<String> gender;
 	private ArrayList<Integer> year;
@@ -11,8 +12,9 @@ public class MyDataFrame {
 	private ArrayList<Integer> count;
 
 	// Constructor
-	public MyDataFrame(ArrayList<String> state, ArrayList<String> gender, ArrayList<Integer> year, ArrayList<String> name, ArrayList<Integer> count) { 
-        this.state = state;
+	public MyDataFrame(ArrayList<Integer> index, ArrayList<String> state, ArrayList<String> gender, ArrayList<Integer> year, ArrayList<String> name, ArrayList<Integer> count) { 
+		this.index = index;
+		this.state = state;
         this.gender = gender;
         this.year = year;
         this.name = name;
@@ -22,9 +24,11 @@ public class MyDataFrame {
 	//1. head & tail
 	//head: Returns the first n rows of the data
 	public MyDataFrame head(int n) {
+		System.out.println("Index, " + "State, " + "Gender, " + "Year, " + "Name, " + "Count");
 		for (int i = 0; i < n; i++)  
 	      {  
 	         System.out.println(
+	        		 this.index.get(i).toString() + ", " + 
 	        		 this.state.get(i).toString() + ", " + 
 	        		 this.gender.get(i).toString() + ", " + 
 	        		 this.year.get(i).toString() + ", " + 
