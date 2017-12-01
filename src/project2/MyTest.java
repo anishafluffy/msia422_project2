@@ -9,8 +9,8 @@ public class MyTest {
 		MyDataFrame df = MyPandas.readCSV("./CA.txt");
 		MyPandas.writeCSV(df, "./Output.txt");
 		
-		df.head(5);
-		//df.getCol(0);
+		//df.head(5);
+		df.dType(1);
 		
 	}
 

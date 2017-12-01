@@ -85,8 +85,19 @@ public class MyDataFrame {
 	//index: Returns the type of the column specified by index
 		//If the type is not uniform, return String
 	public String dType(int index) {
+		//state
+		if (index == 0) { System.out.println("String"); } 
+		//gender
+		else if (index == 1) { System.out.println("String"); } 
+		//year
+		else if (index == 2) { System.out.println("Integer"); } 
+		//name
+		else if (index == 3) { System.out.println("String"); } 
+		//count
+		else if (index == 4) { System.out.println("Integer"); } 
 		return null;
 	}
+	
 	//Returns the type of the column specified by name
 		//If the type is not uniform, return String
 	public String dType(String name) {
