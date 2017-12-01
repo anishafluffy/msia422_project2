@@ -62,8 +62,11 @@ public class MyPandas {
 		ArrayList<String> name = df1.getName();
 		ArrayList<Integer> count = df1.getCount();
 		
-		for (int i = 0; i < df2.getLength(); i++) {
-			index.add(i + df1.getLength() + 1);
+		int len1 = df1.getLength();
+		int len2 = df2.getLength();
+		
+		for (int i = 0; i < len2; i++) {
+			index.add(i + len1);
 		}
 		
 		state.addAll(df2.getState());

@@ -46,6 +46,7 @@ public class MyDataFrame {
 	// get i row of dataframe
 	public String get(int i) {
         return
+        		 this.index.get(i).toString() + ", " + 
        		 this.state.get(i).toString() + ", " + 
        		 this.gender.get(i).toString() + ", " + 
        		 this.year.get(i).toString() + ", " + 
