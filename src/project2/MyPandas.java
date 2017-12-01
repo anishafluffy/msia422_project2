@@ -54,7 +54,8 @@ public class MyPandas {
 	
 	//3. concatenate
 	public static MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
-		MyDataFrame df = null;
+		MyDataFrame df = df1;
+		
 		return df;
 	}
 	
