@@ -24,22 +24,22 @@ public class MyDataFrame {
 	}
 
 	//getters
-    public ArrayList getIndex() { 
+    public ArrayList<Integer> getIndex() { 
         return this.index; 
     } 
-    public ArrayList getState() { 
+    public ArrayList<String> getState() { 
         return this.state; 
     } 
-    public ArrayList getGender() { 
+    public ArrayList<String> getGender() { 
         return this.gender; 
     } 
-    public ArrayList getYear() { 
+    public ArrayList<Integer> getYear() { 
         return this.year; 
     } 
-    public ArrayList getName() { 
+    public ArrayList<String> getName() { 
         return this.name; 
     } 
-    public ArrayList getCount() { 
+    public ArrayList<Integer> getCount() { 
         return this.count; 
     } 
     
@@ -83,12 +83,12 @@ public class MyDataFrame {
 	
 	//2. data type
 	//index: Returns the type of the column specified by index
-		//If the type is not uniform, return �String�
+		//If the type is not uniform, return String
 	public String dType(int index) {
 		return null;
 	}
 	//Returns the type of the column specified by name
-		//If the type is not uniform, return �String�
+		//If the type is not uniform, return String
 	public String dType(String name) {
 		return null;
 	}
