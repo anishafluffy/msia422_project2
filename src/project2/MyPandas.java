@@ -54,8 +54,25 @@ public class MyPandas {
 	
 	//3. concatenate
 	public static MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
-		MyDataFrame df = df1;
 		
+		ArrayList<Integer> index = df1.getIndex();
+		ArrayList<String> state = df1.getState();
+		ArrayList<String> gender = df1.getGender();
+		ArrayList<Integer> year = df1.getYear();
+		ArrayList<String> name = df1.getName();
+		ArrayList<Integer> count = df1.getCount();
+		
+		for (int i = 0; i < df2.getLength(); i++) {
+			index.add(i + df1.getLength() + 1);
+		}
+		
+		state.addAll(df2.getState());
+		gender.addAll(df2.getGender());
+		year.addAll(df2.getYear());
+		name.addAll(df2.getName());
+		count.addAll(df2.getCount());
+		
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		return df;
 	}
 	
