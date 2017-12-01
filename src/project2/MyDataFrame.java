@@ -147,6 +147,8 @@ public class MyDataFrame {
 	public MyDataFrame slice(int index1) {
 		//initialize df
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//create column depending on input
 		ArrayList col = null; 
 		try {
 			//state
@@ -165,17 +167,43 @@ public class MyDataFrame {
 			System.out.println("Incorrect index entered for slice.");
 		}
 		
+		//print specified column
 		for (int i = 0; i < col.size(); i++)  
 	      {  
-	         System.out.println(
-	        		 col.get(i).toString()
-	        		 );  
+	         System.out.println(col.get(i).toString());  
 	      } 
 		return null;
 	}
 	
 	//Returns the column specified by name
-	public MyDataFrame slice(String name) {
+	public MyDataFrame slice(String name1) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//create column depending on input
+		ArrayList col = null; 
+		try {
+			//state
+			if ("state".equalsIgnoreCase(name1)) { col = df.getState(); } 
+			//gender
+			else if ("gender".equalsIgnoreCase(name1)) { col = df.getGender(); } 
+			//year
+			else if ("year".equalsIgnoreCase(name1)) { col = df.getYear(); } 
+			//name
+			else if ("name".equalsIgnoreCase(name1)) { col = df.getName(); } 
+			//count
+			else if ("count".equalsIgnoreCase(name1)) { col = df.getCount(); } 
+			else { throw new IllegalArgumentException(); }
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Incorrect index entered for slice.");
+		}
+		
+		//print specified column
+		for (int i = 0; i < col.size(); i++)  
+	      {  
+	         System.out.println(col.get(i).toString());  
+	      } 
 		return null;
 	}
 	
