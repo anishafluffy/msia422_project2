@@ -10,14 +10,13 @@ public class MyTest {
 		MyDataFrame df2 = MyPandas.readCSV("./TX.txt");
 		MyDataFrame df = MyPandas.concat(df1, df2);
 		
-		MyPandas.writeCSV(df1, "./Output.txt");
-		MyPandas.writeCSV(df, "./Combined.txt");
+		//MyPandas.writeCSV(df1, "./Output.txt");
+		//MyPandas.writeCSV(df, "./Combined.txt");
 		
 		//df.head(5);
-		df.dType(1);
 		df.dType(2);
 		df.dType("STATE");
-
+		df.slice(3); //gives an error when enter 5
 	}
 
 }

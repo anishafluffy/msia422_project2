@@ -129,8 +129,33 @@ public class MyDataFrame {
 	
 	//3. slicing
 	//Returns the column specified by index
-	public MyDataFrame slice(int index) {
-		//MyDataFrame.getCol(0); 
+	public MyDataFrame slice(int index1) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		ArrayList col = null; 
+		try {
+			//state
+			if (index1 == 0) { col = df.getState(); } 
+			//gender
+			else if (index1 == 1) { col = df.getGender(); } 
+			//year
+			else if (index1 == 2) { col = df.getYear(); } 
+			//name
+			else if (index1 == 3) { col = df.getName(); } 
+			//count
+			else if (index1 == 4) { col = df.getCount(); } 
+			else { throw new IllegalArgumentException(); }
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Incorrect index entered for slice.");
+		}
+		
+		for (int i = 0; i < col.size(); i++)  
+	      {  
+	         System.out.println(
+	        		 col.get(i).toString()
+	        		 );  
+	      } 
 		return null;
 	}
 	
