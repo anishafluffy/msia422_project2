@@ -27,18 +27,17 @@ public class MyTest {
 
 		//df.slice("name"); //gives an error when enter incorrect
 
-		df.getMax(4);
-		df.getMin(3);
-		df.getMax("count");
-		df.getMin("count");
-<<<<<<< HEAD
-		df.loc(700000);
-		df.loc(5,10);
-=======
+//		df.getMax(4);
+//		df.getMin(3);
+//		df.getMax("count");
+//		df.getMin("count");
+//
+//		df.loc(700000);
+//		df.loc(5,10);
+
 
 		
 
->>>>>>> baf547849e27735162826082c30752b996e21a0f
 	}
 
 }
