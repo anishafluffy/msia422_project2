@@ -60,6 +60,31 @@ public class MyDataFrame {
 		return this.index.size();
 	}
 
+	public ArrayList getCol(int index1) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//create column depending on input
+		ArrayList col = null; 
+		try {
+			//state
+			if (index1 == 0) { col = df.getState(); } 
+			//gender
+			else if (index1 == 1) { col = df.getGender(); } 
+			//year
+			else if (index1 == 2) { col = df.getYear(); } 
+			//name
+			else if (index1 == 3) { col = df.getName(); } 
+			//count
+			else if (index1 == 4) { col = df.getCount(); } 
+			else { throw new IllegalArgumentException(); }
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Incorrect index entered for slice.");
+		}
+		return col; 
+	}
+	
 	//1. head & tail
 	//head: Returns the first n rows of the data
 	public MyDataFrame head(int n) {
@@ -146,24 +171,8 @@ public class MyDataFrame {
 		//initialize df
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		
-		//create column depending on input
-		ArrayList col = null; 
-		try {
-			//state
-			if (index1 == 0) { col = df.getState(); } 
-			//gender
-			else if (index1 == 1) { col = df.getGender(); } 
-			//year
-			else if (index1 == 2) { col = df.getYear(); } 
-			//name
-			else if (index1 == 3) { col = df.getName(); } 
-			//count
-			else if (index1 == 4) { col = df.getCount(); } 
-			else { throw new IllegalArgumentException(); }
-		}
-		catch (IllegalArgumentException e) {
-			System.out.println("Incorrect index entered for slice.");
-		}
+		//get specified column
+		ArrayList col = df.getCol(index1);
 		
 		//print specified column
 		for (int i = 0; i < col.size(); i++)  
