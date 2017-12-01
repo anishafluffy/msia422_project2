@@ -2,6 +2,8 @@ package project2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 
 public class MyDataFrame {
@@ -265,23 +267,27 @@ public class MyDataFrame {
 	
 	//7. aggregation
 	//Returns the minimum element of the column specified by index
-	public Object getMin(int index) {
-		return null;
+	public Object getMin(int index1) {
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		return Collections.min(df.slice(index1));
 	}
 	
 	//Returns the minimum element of the column specified by label
 	public Object getMin(String label) {
-		return null;
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		return Collections.min(df.slice(label));
 	}
 	
 	//Returns the maximum element of the column specified by index
-	public Object getMax(int index) {
-		return null;
+	public Object getMax(int index1) {
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		return Collections.max(df.slice(index1));
 	}
 	
 	//Returns the maximum element of the column specified by label
 	public Object getMax(String label) {
-		return null;
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		return Collections.max(df.slice(label));
 	}
 
 	
