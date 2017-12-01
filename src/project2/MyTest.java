@@ -7,10 +7,11 @@ public class MyTest {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		MyDataFrame df = MyPandas.readCSV("./CA.txt");
-		MyPandas.writeCSV(df, "./Output.txt");
+		//MyPandas.writeCSV(df, "./Output.txt");
 		
 		//df.head(5);
-		df.dType(1);
+		df.dType(2);
+		df.dType("STATE");
 		
 	}
 

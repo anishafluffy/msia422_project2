@@ -85,22 +85,44 @@ public class MyDataFrame {
 	//index: Returns the type of the column specified by index
 		//If the type is not uniform, return String
 	public String dType(int index) {
-		//state
-		if (index == 0) { System.out.println("String"); } 
-		//gender
-		else if (index == 1) { System.out.println("String"); } 
-		//year
-		else if (index == 2) { System.out.println("Integer"); } 
-		//name
-		else if (index == 3) { System.out.println("String"); } 
-		//count
-		else if (index == 4) { System.out.println("Integer"); } 
+		try {
+			//state
+			if (index == 0) { System.out.println("String"); } 
+			//gender
+			else if (index == 1) { System.out.println("String"); } 
+			//year
+			else if (index == 2) { System.out.println("Integer"); } 
+			//name
+			else if (index == 3) { System.out.println("String"); } 
+			//count
+			else if (index == 4) { System.out.println("Integer"); } 
+			else { throw new IllegalArgumentException(); }
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Incorrect index entered for dType.");
+		}
 		return null;
 	}
 	
 	//Returns the type of the column specified by name
 		//If the type is not uniform, return String
 	public String dType(String name) {
+		try {
+			//state
+			if ("state".equalsIgnoreCase(name)) { System.out.println("String"); } 
+			//gender
+			else if ("gender".equalsIgnoreCase(name)) { System.out.println("String"); } 
+			//year
+			else if ("year".equalsIgnoreCase(name)) { System.out.println("Integer"); } 
+			//name
+			else if ("name".equalsIgnoreCase(name)) { System.out.println("String"); } 
+			//count
+			else if ("count".equalsIgnoreCase(name)) { System.out.println("Integer"); } 
+			else { throw new IllegalArgumentException(); }
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Incorrect name entered for dType.");
+		}
 		return null;
 	}
 	
