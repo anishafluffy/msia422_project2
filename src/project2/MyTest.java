@@ -19,7 +19,11 @@ public class MyTest {
 		//df.dType(2);
 		//df.dType("STATE");
 		
+<<<<<<< HEAD
 		//df.slice(3); //gives an error when enter incorrect
+=======
+		//df.slice(5); //gives an error when enter incorrect
+>>>>>>> d3924aae54ae94d6d05b0a878702019736385383
 		//df.slice("name"); //gives an error when enter incorrect
 
 		df.getMax(4);
