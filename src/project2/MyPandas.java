@@ -1,6 +1,7 @@
 package project2;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class MyPandas {
@@ -40,10 +41,18 @@ public class MyPandas {
 	
 	//2. write
 	public static void writeCSV(MyDataFrame data, String path) throws IOException {
-		
+		//export text file
+		FileWriter writer = new FileWriter(path);
+		writer.write("State, " + "Gender, " + "Year, " + "Name, " + "Count" + "\n");
+		for (int i = 0; i < data.getLength(); i++) {
+			writer.write(data.get(i));
+			writer.write("\n");	  
+			}
+
+		writer.close();
 	}
 	
-	//3. concat
+	//3. concatenate
 	public static MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
 		MyDataFrame df = null;
 		return df;

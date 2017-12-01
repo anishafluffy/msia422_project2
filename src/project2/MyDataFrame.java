@@ -1,5 +1,6 @@
 package project2;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MyDataFrame {
@@ -19,7 +20,21 @@ public class MyDataFrame {
         this.year = year;
         this.name = name;
         this.count = count;
-	} 
+	}
+	
+	public String get(int i) {
+        return
+       		 this.state.get(i).toString() + ", " + 
+       		 this.gender.get(i).toString() + ", " + 
+       		 this.year.get(i).toString() + ", " + 
+       		 this.name.get(i).toString() + ", " + 
+       		 this.count.get(i).toString()
+       		 ;  
+	}
+	
+	public int getLength() {
+		return this.index.size();
+	}
 	
 	//1. head & tail
 	//head: Returns the first n rows of the data
@@ -45,12 +60,12 @@ public class MyDataFrame {
 	
 	//2. data type
 	//index: Returns the type of the column specified by index
-		//If the type is not uniform, return ‘String’
+		//If the type is not uniform, return ï¿½Stringï¿½
 	public String dType(int index) {
 		return null;
 	}
 	//Returns the type of the column specified by name
-		//If the type is not uniform, return ‘String’
+		//If the type is not uniform, return ï¿½Stringï¿½
 	public String dType(String name) {
 		return null;
 	}
@@ -77,8 +92,8 @@ public class MyDataFrame {
 	}
 	
 	//4. filtering
-	//Returns data filtered by applying “col op o” on MyDataFrame object, 
-		//e.g. “count > 10”, “state = ‘IL’”
+	//Returns data filtered by applying ï¿½col op oï¿½ on MyDataFrame object, 
+		//e.g. ï¿½count > 10ï¿½, ï¿½state = ï¿½ILï¿½ï¿½
 	public MyDataFrame filter(String col, String op, Object o) {
 		return null;
 	}
