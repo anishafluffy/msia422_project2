@@ -224,7 +224,8 @@ public class MyDataFrame {
 		//print specified column
 		for (int i = 0; i < col.size(); i++)  
 	      {  
-	         System.out.println(col.get(i).toString());  
+	         System.out.println(col.get(i).toString()); 
+	         
 	      } 
 		return null;
 	}
@@ -234,9 +235,11 @@ public class MyDataFrame {
 		//initialize df
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		
-		for (int x = 0; x < indexArr.length; x++)
+		for (int x = 0; x < indexArr.length; x++) {
 		    System.out.println(indexArr[x]);
-		
+			//get specified column
+			ArrayList col = df.getCol(indexArr[x]);
+		}
 		return null;
 	}
 	
