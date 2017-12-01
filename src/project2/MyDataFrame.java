@@ -231,6 +231,12 @@ public class MyDataFrame {
 	
 	//Returns the columns specified by an index array
 	public MyDataFrame slice(int[] indexArr) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		for (int x = 0; x < indexArr.length; x++)
+		    System.out.println(indexArr[x]);
+		
 		return null;
 	}
 	
