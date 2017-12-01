@@ -19,10 +19,11 @@ public class MyTest {
 		//df.dType(2);
 		//df.dType("STATE");
 		
-		df.slice(3); //gives an error when enter incorrect
+		//df.slice(3); //gives an error when enter incorrect
 		//df.slice("name"); //gives an error when enter incorrect
 
-
+		df.getMax(4);
+		df.getMin(3);
 
 
 	}
