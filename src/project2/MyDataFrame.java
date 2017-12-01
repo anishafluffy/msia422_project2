@@ -252,18 +252,8 @@ public class MyDataFrame {
 		return null;
 	}
 
-	//Returns the rows starting from label
-	public MyDataFrame loc(String label) {
-		return null;
-	}
-
 	//Returns the rows between from and to (including from and to)
 	public MyDataFrame loc(int from, int to) {
-		return null;
-	}
-	
-	//Returns the rows between from and to (including from and to)
-	public MyDataFrame loc(String from, String to) {
 		return null;
 	}
 	
