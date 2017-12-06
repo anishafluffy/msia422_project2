@@ -299,13 +299,154 @@ public class MyDataFrame {
 	//4. filtering
 	//Returns data filtered by applying col op o on MyDataFrame object, 
 		//e.g. count > 10, state = IL 
-	public MyDataFrame filter(String col, String op, Object o) {
+	public MyDataFrame filter(String col, String op, int o) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
-		ArrayList<Integer> filtered = df.getCol(col);
-		ArrayList<Integer> newindex;
+		
+		//Initiate new ArrayLists
+		ArrayList<Integer> newindex = new ArrayList<>();
+		ArrayList<Integer> index1 = new ArrayList<>();
+		ArrayList<String> state1 = new ArrayList<>();
+		ArrayList<String> gender1 = new ArrayList<>();
+		ArrayList<Integer> year1 = new ArrayList<>();
+		ArrayList<String> name1 = new ArrayList<>();
+		ArrayList<Integer> count1 = new ArrayList<>();
+		
 		int len = df.getLength();
-		for (int i = 0; i < len; i++) {
-			if (df.getCol(col).get(i) > 0) {
+		
+		if (op.equals(">")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if ((int) df.getCol(col).get(i) > o) {
+					newindex.add(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}
+		else if (op.equals("<")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if ((int) df.getCol(col).get(i) < o) {
+					newindex.add(i);
+					System.out.println(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}
+		else if (op.equals("=")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if ((int) df.getCol(col).get(i) == o) {
+					newindex.add(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}
+		else if (op.equals(">=")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if ((int) df.getCol(col).get(i) >= o) {
+					newindex.add(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}
+		else if (op.equals("<=")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if ((int) df.getCol(col).get(i) <= o) {
+					newindex.add(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}		
+		
+		//Create new dataframe and print result
+		MyDataFrame df2 = new MyDataFrame(index1, state1, gender1, year1, name1, count1);
+		int len2 = df2.getLength();
+		for (int i = 0; i < len2; i++) {
+			System.out.println(df2.get(i));
+		}
+		return null;
+	}
+	
+	public MyDataFrame filter(String col, String op, String o) {
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//Initiate new ArrayLists
+		ArrayList<Integer> newindex = new ArrayList<>();
+		ArrayList<Integer> index1 = new ArrayList<>();
+		ArrayList<String> state1 = new ArrayList<>();
+		ArrayList<String> gender1 = new ArrayList<>();
+		ArrayList<Integer> year1 = new ArrayList<>();
+		ArrayList<String> name1 = new ArrayList<>();
+		ArrayList<Integer> count1 = new ArrayList<>();
+		
+		int len = df.getLength();
+		
+		if (op.equals("=")) {
+			//Grab new index entries of filtered column
+			for (int i = 0; i < len; i++) {
+				if (df.getCol(col).get(i).equals(o)) {
+					newindex.add(i);
+				}
+			}
+			//Filter the rest of columns
+			for (int i : newindex) {
+				index1.add(df.getIndex().get(i));
+				state1.add(df.getState().get(i));
+				gender1.add(df.getGender().get(i));
+				year1.add(df.getYear().get(i));
+				name1.add(df.getName().get(i));
+				count1.add(df.getCount().get(i));
+			}
+		}
+		//Create new dataframe and print result
+		MyDataFrame df2 = new MyDataFrame(index1, state1, gender1, year1, name1, count1);
+		int len2 = df2.getLength();
+		for (int i = 0; i < len2; i++) {
+			System.out.println(df2.get(i));
+		}
+		return null;
 	}
 	
 	//5. indexing

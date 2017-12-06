@@ -15,7 +15,7 @@ public class MyTest {
 		//MyPandas.writeCSV(df, "./Combined.txt");
 		
 	//3. concat
-		MyDataFrame df = MyPandas.concat(df1, df2);
+		//MyDataFrame df = MyPandas.concat(df1, df2);
 		
 	//MyDataFrame class
 	//1. Head and Tail
@@ -33,11 +33,12 @@ public class MyTest {
 		//int[] indexArr = {1,3,4};
 		//df.slice(indexArr);
 		
-		String[] nameArr = {"name", "count"};
-		df.slice(nameArr);
+		//String[] nameArr = {"name", "count"};
+		//df.slice(nameArr);
 		
 	//4. Filtering
-		
+		//df.filter("year", "=", 2015);
+		//df.filter("name", "=", "Spencer");
 		
 	//5. Indexing
 		//df.loc(700000);
