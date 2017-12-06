@@ -27,9 +27,8 @@ public class MyTest {
 		//df.dType("STATE");
 		
 	//3. Slicing
-		//df.slice(3); //gives an error when enter incorrect
-		//df.slice(5); //gives an error when enter incorrect
-		//df.slice("name"); //gives an error when enter incorrect
+		//df.slice(3); 
+		//df.slice("name"); 
 
 		//int[] indexArr = {1,3,4};
 		//df.slice(indexArr);
