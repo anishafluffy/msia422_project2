@@ -257,6 +257,7 @@ public class MyDataFrame {
 	}
 	
 	//Returns the columns specified by an index array
+	@SuppressWarnings("rawtypes")
 	public MyDataFrame slice(int[] indexArr) {
 		//initialize df
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
@@ -276,7 +277,22 @@ public class MyDataFrame {
 	}
 	
 	//Returns the columns specified by a name array
+	@SuppressWarnings("rawtypes")
 	public MyDataFrame slice(String[] nameArr) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		for (int y = 0; y < df.getLength(); y++) {
+			for (int x = 0; x < nameArr.length; x++) {
+				//get specified column
+				ArrayList col = df.getCol(nameArr[x]); 
+				System.out.print(col.get(y).toString()); 
+				if (x < nameArr.length - 1) {
+					System.out.print(", ");
+				}
+			}
+			System.out.print("\n");
+		}
 		return null;
 	}
 	
@@ -449,7 +465,7 @@ public class MyDataFrame {
 	public MyDataFrame loc(int from, int to) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		System.out.println("Index, " + "State, " + "Gender, " + "Year, " + "Name, " + "Count");
-		int len = df.getLength();
+		//int len = df.getLength();
 		for (int i = from; i <= to; i++) {
 			System.out.println(df.get(i));
 		}
@@ -458,7 +474,7 @@ public class MyDataFrame {
 	
 	//6. sorting
 	//Returns the data sorted by the column specified by index
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public MyDataFrame sort(int index1) {
 		//initialize df
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
@@ -485,30 +501,48 @@ public class MyDataFrame {
 				 list2.get(i).toString() + ", " + 
 				 list3.get(i).toString() + ", " + 
 				 list4.get(i).toString() + ", " + 
-				 list5.get(i).toString() + ", "
+				 list5.get(i).toString()
         		 );  
 	      }
-//		List<String> key = Arrays.asList("demrru", "ist", "ehllo", "aemnsy", "no");
-//		List<String> list1 = Arrays.asList("MURDER!","It's", "Hello","Yes-Man", "ON");
-//		List<Integer> list2 = Arrays.asList(2, 4, 3, 1, 5);            // Also use Integer type 
-//		List<Double>  list3 = Arrays.asList(0.2, 0.4, 0.3, 0.1, 0.5);  // or Double type
-//
-//		// Sort all lists (excluding the key)
-//		keySort(key, list1, list2, list3);
-//
-//		// Sort all lists (including the key)
-//		keySort(key, key, list1, list2, list3);
-		
 		return null;
 	}
 
 	//Returns the data sorted by the column specified by name
-	public MyDataFrame sort(String name) {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public MyDataFrame sort(String name1) {		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//create key column to sort on
+		ArrayList key = df.getCol(name1);
+		//state
+		ArrayList<String> list1 = df.getState(); 
+		//gender
+		ArrayList<String> list2 = df.getGender(); 
+		//year
+		ArrayList<Integer> list3 = df.getYear();
+		//name
+		ArrayList<String> list4 = df.getName(); 
+		//count
+		ArrayList<Integer> list5 = df.getCount();
+	
+		//sort each list (excluding key)
+		keySort(key, list1, list2, list3, list4, list5);
+		for (int i = 0; i < df.getLength(); i++)  
+	      {  
+	         System.out.println(
+        		 list1.get(i).toString() + ", " + 
+				 list2.get(i).toString() + ", " + 
+				 list3.get(i).toString() + ", " + 
+				 list4.get(i).toString() + ", " + 
+				 list5.get(i).toString()
+        		 );  
+	      }
 		return null;
 	}
 	
 	//7. aggregation
 	//Returns the minimum element of the column specified by index
+	@SuppressWarnings("unchecked")
 	public Object getMin(int index1) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		System.out.println(Collections.min(df.getCol(index1)));
@@ -516,6 +550,7 @@ public class MyDataFrame {
 	}
 	
 	//Returns the minimum element of the column specified by label
+	@SuppressWarnings("unchecked")
 	public Object getMin(String label) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		System.out.println(Collections.min(df.getCol(label)));
@@ -523,6 +558,7 @@ public class MyDataFrame {
 	}
 	
 	//Returns the maximum element of the column specified by index
+	@SuppressWarnings("unchecked")
 	public Object getMax(int index1) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		System.out.println(Collections.max(df.getCol(index1)));
@@ -530,6 +566,7 @@ public class MyDataFrame {
 	}
 	
 	//Returns the maximum element of the column specified by label
+	@SuppressWarnings("unchecked")
 	public Object getMax(String label) {
 		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
 		System.out.println(Collections.max(df.getCol(label)));
