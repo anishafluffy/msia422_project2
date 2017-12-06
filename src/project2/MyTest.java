@@ -13,29 +13,39 @@ public class MyTest {
 		//MyPandas.writeCSV(df1, "./Output.txt");
 		//MyPandas.writeCSV(df, "./Combined.txt");
 		
+		//1. Head and Tail
 		//df.head(5);
 		//df.tail(5);
 		
+		//2. dType
 		//df.dType(2);
 		//df.dType("STATE");
 		
+		//3. Slicing
 		//df.slice(3); //gives an error when enter incorrect
 		//df.slice(5); //gives an error when enter incorrect
-		
 		//df.slice("name"); //gives an error when enter incorrect
 
 		//int[] indexArr = {1,3,4};
 		//df.slice(indexArr);
 		
-		df.sort(3);
+		//4. Filtering
 		
-//		df.getMax(4);
-//		df.getMin(3);
-//		df.getMax("count");
-//		df.getMin("count");
-//
-//		df.loc(700000);
-//		df.loc(5,10);
+		
+		//5. Indexing
+		//df.loc(700000);
+		//df.loc(5,10);	
+		
+		//6. Sorting
+		//df.sort(3);
+		
+		//7. Aggregation
+		//df.getMax(4);
+		//df.getMin(3);
+		//df.getMax("count");
+		//df.getMin("count");
+
+
 
 
 	
