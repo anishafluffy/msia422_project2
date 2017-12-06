@@ -284,7 +284,12 @@ public class MyDataFrame {
 	//Returns data filtered by applying col op o on MyDataFrame object, 
 		//e.g. count > 10, state = IL 
 	public MyDataFrame filter(String col, String op, Object o) {
-		return null;
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		ArrayList<Integer> filtered = df.getCol(col);
+		ArrayList<Integer> newindex;
+		int len = df.getLength();
+		for (int i = 0; i < len; i++) {
+			if (df.getCol(col).get(i) > 0) {
 	}
 	
 	//5. indexing
