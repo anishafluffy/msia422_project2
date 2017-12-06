@@ -15,7 +15,7 @@ public class MyTest {
 		//MyPandas.writeCSV(df, "./Combined.txt");
 		
 	//3. concat
-		//MyDataFrame df = MyPandas.concat(df1, df2);
+		MyDataFrame df = MyPandas.concat(df1, df2);
 		
 	//MyDataFrame class
 	//1. Head and Tail
