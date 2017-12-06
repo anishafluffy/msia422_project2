@@ -30,7 +30,8 @@ public class MyTest {
 		//df.slice(indexArr);
 		
 		//4. Filtering
-		
+		//df.filter("year", "=", 2015);
+		//df.filter("name", "=", "Spencer");
 		
 		//5. Indexing
 		//df.loc(700000);
