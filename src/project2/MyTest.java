@@ -5,14 +5,19 @@ import java.io.IOException;
 public class MyTest {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+		//MyPandas class
+		//1. readCSV
 		MyDataFrame df1 = MyPandas.readCSV("./CA.txt");
 		MyDataFrame df2 = MyPandas.readCSV("./TX.txt");
-		MyDataFrame df = MyPandas.concat(df1, df2);
 		
+		//2. writeCSV
 		//MyPandas.writeCSV(df1, "./Output.txt");
 		//MyPandas.writeCSV(df, "./Combined.txt");
 		
+		//3. concat
+		MyDataFrame df = MyPandas.concat(df1, df2);
+		
+		//MyDataFrame class
 		//1. Head and Tail
 		//df.head(5);
 		//df.tail(5);
