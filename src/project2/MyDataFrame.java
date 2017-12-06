@@ -1,10 +1,7 @@
 package project2;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
+import java.util.*;
 
 public class MyDataFrame {
 
@@ -112,6 +109,36 @@ public class MyDataFrame {
 			System.out.println("Incorrect index entered for slice.");
 		}
 		return col; 
+	}
+	
+	public static <T extends Comparable<T>> void keySort(final List<T> key, List<?>... lists){
+		// Create a List of indices
+		List<Integer> indices = new ArrayList<Integer>();
+		for(int i = 0; i < key.size(); i++)
+		indices.add(i);
+		
+		// Sort the indices list based on the key
+		Collections.sort(indices, new Comparator<Integer>(){
+			@Override public int compare(Integer i, Integer j) {
+				return key.get(i).compareTo(key.get(j));
+			}
+		});
+		
+		// Create a mapping that allows sorting of the List by N swaps.
+		Map<Integer,Integer> swapMap = new HashMap<Integer, Integer>(indices.size());
+		
+		// Only swaps can be used b/c we cannot create a new List of type <?>
+		for(int i = 0; i < indices.size(); i++){
+			int k = indices.get(i);
+			while(swapMap.containsKey(k))
+			k = swapMap.get(k);
+			swapMap.put(i, k);
+		}
+		
+		// for each list, swap elements to sort according to key list
+		for(Map.Entry<Integer, Integer> e : swapMap.entrySet())
+		for(List<?> list : lists)
+		Collections.swap(list, e.getKey(), e.getValue());
 	}
 	
 	//1. head & tail
@@ -254,8 +281,8 @@ public class MyDataFrame {
 	}
 	
 	//4. filtering
-	//Returns data filtered by applying �col op o� on MyDataFrame object, 
-		//e.g. �count > 10�, �state = �IL��
+	//Returns data filtered by applying col op o on MyDataFrame object, 
+		//e.g. count > 10, state = IL 
 	public MyDataFrame filter(String col, String op, Object o) {
 		return null;
 	}
@@ -285,7 +312,47 @@ public class MyDataFrame {
 	
 	//6. sorting
 	//Returns the data sorted by the column specified by index
-	public MyDataFrame sort(int index) {
+	@SuppressWarnings("unchecked")
+	public MyDataFrame sort(int index1) {
+		//initialize df
+		MyDataFrame df = new MyDataFrame(index, state, gender, year, name, count);
+		
+		//create key column to sort on
+		ArrayList key = df.getCol(index1);
+		//state
+		ArrayList<String> list1 = df.getState(); 
+		//gender
+		ArrayList<String> list2 = df.getGender(); 
+		//year
+		ArrayList<Integer> list3 = df.getYear();
+		//name
+		ArrayList<String> list4 = df.getName(); 
+		//count
+		ArrayList<Integer> list5 = df.getCount();
+	
+		//sort each list (excluding key)
+		keySort(key, list1, list2, list3, list4, list5);
+		for (int i = 0; i < df.getLength(); i++)  
+	      {  
+	         System.out.println(
+        		 list1.get(i).toString() + ", " + 
+				 list2.get(i).toString() + ", " + 
+				 list3.get(i).toString() + ", " + 
+				 list4.get(i).toString() + ", " + 
+				 list5.get(i).toString() + ", "
+        		 );  
+	      }
+//		List<String> key = Arrays.asList("demrru", "ist", "ehllo", "aemnsy", "no");
+//		List<String> list1 = Arrays.asList("MURDER!","It's", "Hello","Yes-Man", "ON");
+//		List<Integer> list2 = Arrays.asList(2, 4, 3, 1, 5);            // Also use Integer type 
+//		List<Double>  list3 = Arrays.asList(0.2, 0.4, 0.3, 0.1, 0.5);  // or Double type
+//
+//		// Sort all lists (excluding the key)
+//		keySort(key, list1, list2, list3);
+//
+//		// Sort all lists (including the key)
+//		keySort(key, key, list1, list2, list3);
+		
 		return null;
 	}
 

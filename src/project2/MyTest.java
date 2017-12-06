@@ -22,11 +22,13 @@ public class MyTest {
 		//df.slice(3); //gives an error when enter incorrect
 		//df.slice(5); //gives an error when enter incorrect
 		
-		int[] indexArr = {1,3};
-		df.slice(indexArr);
-
 		//df.slice("name"); //gives an error when enter incorrect
 
+		//int[] indexArr = {1,3,4};
+		//df.slice(indexArr);
+		
+		df.sort(3);
+		
 //		df.getMax(4);
 //		df.getMin(3);
 //		df.getMax("count");
